@@ -6,13 +6,13 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:10:48 by bizcru            #+#    #+#             */
-/*   Updated: 2024/07/08 02:40:41 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:17:02 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_node **lst, t_node *new)
 {
 	if (!new)
 		return ;

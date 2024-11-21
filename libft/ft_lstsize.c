@@ -6,13 +6,13 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:44:38 by bizcru            #+#    #+#             */
-/*   Updated: 2024/07/08 02:53:14 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:32:35 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_node *lst)
 {
 	int	i;
 

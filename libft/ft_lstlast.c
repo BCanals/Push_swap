@@ -6,15 +6,15 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 02:48:49 by bizcru            #+#    #+#             */
-/*   Updated: 2024/07/08 02:53:34 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 17:14:51 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_node	*ft_lstlast(t_node *lst)
 {
-	t_list	*last;
+	t_node	*last;
 
 	last = lst;
 	while (lst)

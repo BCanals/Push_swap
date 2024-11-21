@@ -6,16 +6,16 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 03:40:22 by bizcru            #+#    #+#             */
-/*   Updated: 2024/10/18 16:24:46 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:18:53 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_node **lst, void (*del)(void *))
 {
-	t_list	*node;
-	t_list	*next;
+	t_node	*node;
+	t_node	*next;
 
 	if (!lst || !del || !*lst)
 		return ;
@@ -27,4 +27,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		node = next;
 	}
 	*lst = NULL;
+	free (lst);
 }
