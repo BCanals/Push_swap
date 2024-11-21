@@ -6,7 +6,7 @@
 /*   By: bcanals- <bcanals-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:59:46 by bcanals-          #+#    #+#             */
-/*   Updated: 2024/10/18 16:32:41 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 13:49:58 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_putnbr_base_easy(size_t nbr, char *base, unsigned int size, int *count)
 	return (++*count);
 }
 
-int	ft_putnbr_base_u(size_t  nbr, char *base)
+int	ft_putnbr_base_u(size_t nbr, char *base)
 {
 	unsigned int	size;
 	char			c;

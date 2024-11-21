@@ -6,7 +6,7 @@
 #    By: bizcru <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/28 15:47:58 by bizcru            #+#    #+#              #
-#    Updated: 2024/10/18 20:21:54 by bizcru           ###   ########.fr        #
+#    Updated: 2024/11/21 13:41:44 by bizcru           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS = ft_islower.c \
 		ft_toupper.c \
 		ft_tolower.c \
 		ft_atoi.c \
+		ft_atoi_pshswp.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
 		ft_strncmp.c \
