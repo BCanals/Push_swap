@@ -1,26 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 17:55:56 by bizcru           ###   ########.fr       */
+/*   Created: 2024/11/21 17:18:14 by bizcru            #+#    #+#             */
+/*   Updated: 2024/11/21 17:42:48 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+/*
+   Takes an array of integer where array[0] is the number of elements to copy.
+   Creates and returns the head of the stack_a with the given data.
+*/
+
+t_node	*initial_data_load(int *data)
 {
 	t_node	*stack_a;
+	t_node	*new;
+	int		i;
 
-	if (argc == 1)
-		return (0);
-	stack_a = data_loader(argc, argv);
+	stack_a = ft_lstnew(data + 1);
 	if (!stack_a)
-		return (ft_putstr_fd("Error\n", 2));
-	return (0);
+	{
+		free(data);
+		return (NULL);
+	}
+	i = 2;
+	while (i < data[0])
+	{
+		new = ft_lstnew(data + i++);
+		if (!new)
+		{
+			free(data);
+			//ft_lstclear();
+			return (NULL);
+		}
+		ft_lstadd_front(&stack_a, new);
+	}
+	free (data);
+	return (stack_a);
 }
