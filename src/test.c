@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 23:40:54 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 01:43:22 by bizcru           ###   ########.fr       */
+/*   Created: 2024/11/21 01:58:58 by bizcru            #+#    #+#             */
+/*   Updated: 2024/11/21 02:02:11 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "../libft/libft.h"
 
-typedef struct s_element
+int main(int argc, char **argv)
 {
-	int					data;
-	struct s_element	*next;
-}	t_element;
+	argc++;
+	ft_printf("%i\n", ft_strcmp("2147483647", argv[1]));
+	return 0;
+}
