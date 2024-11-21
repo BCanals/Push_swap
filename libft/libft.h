@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 23:37:11 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 17:16:13 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 20:13:23 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 typedef struct s_node
 {
-	int				*data;
+	int				data;
 	struct s_node	*next;
 }					t_node;
 
@@ -75,10 +75,10 @@ void	ft_lstadd_front(t_node **lst, t_node *new);
 int		ft_lstsize(t_node *lst);
 t_node	*ft_lstlast(t_node *lst);
 void	ft_lstadd_back(t_node **lst, t_node *new);
-void	ft_lstdelone(t_node *lst, void (*del)(void *));
-void	ft_lstclear(t_node **lst, void (*del)(void *));
-void	ft_lstiter(t_node *lst, void (*f)(void *));
-t_node	*ft_lstmap(t_node *lst, void *(*f)(void *), void (*del)(void *));
+void	ft_lstdelone(t_node *lst);
+void	ft_lstclear(t_node **lst);
+void	ft_lstiter(t_node *lst, void f(int));
+t_node	*ft_lstmap(t_node *lst, int (*f)(int));
 int		ft_printf(const char *format, ...);
 int		ft_printf_char(va_list *args);
 int		ft_printf_dec(va_list *args);

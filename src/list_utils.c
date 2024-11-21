@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:18:14 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 17:42:48 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 21:13:34 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,16 @@ t_node	*initial_data_load(int *data)
 		return (NULL);
 	}
 	i = 2;
-	while (i < data[0])
+	while (i <= data[0])
 	{
 		new = ft_lstnew(data + i++);
 		if (!new)
 		{
 			free(data);
-			//ft_lstclear();
+			ft_lstclear(&stack_a);
 			return (NULL);
 		}
-		ft_lstadd_front(&stack_a, new);
+		ft_lstadd_back(&stack_a, new);
 	}
-	free (data);
 	return (stack_a);
 }
