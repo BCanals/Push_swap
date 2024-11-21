@@ -6,14 +6,14 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 23:40:54 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 01:43:22 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 09:41:23 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-typedef struct s_element
+typedef struct s_node
 {
-	int					data;
-	struct s_element	*next;
-}	t_element;
+	int				data;
+	struct s_note	*next;
+}	t_node;
