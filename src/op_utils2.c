@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   op_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 23:40:54 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 22:36:31 by bizcru           ###   ########.fr       */
+/*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
+/*   Updated: 2024/11/21 23:26:11 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+static void	do_rotate(t_node **stack)
+{
+	t_node *last;
 
-t_node	*data_loader(int argc, char **argv);
-t_node	*initial_data_load(int *data);
-void	swipe_one(t_node **stack, char c);
-void	swipe_two(t_node **stack_a, t_node stack_b);
-void	do_push(t_node **stack_to, t_node **stack_from, char c);
+	last = ft_lstlast(*stack);
+	(*last)->next = *stack;
+	last = *stack;
+	*stack = (*last)->next;
+	(*last)->next = NULL;
+}
+
+void	rotate_one ();
+void	rotate_two ();
+
