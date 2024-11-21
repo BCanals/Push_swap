@@ -6,13 +6,13 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 04:05:01 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 16:35:00 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 20:13:03 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_node *lst, void (*f)(void *))
+void	ft_lstiter(t_node *lst, void f(int))
 {
 	if (!lst || !f)
 		return ;

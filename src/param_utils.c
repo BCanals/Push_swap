@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 17:54:47 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 21:14:11 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
    function to be called to free memory and return NULL.
 */
 
-static int	*clean_up(char **prms, int *data)
+static void	*clean_up(char **prms, int *data)
 {
 	int	i;
 
@@ -130,16 +130,16 @@ t_node	*data_loader(int argc, char **argv)
 	{
 		char_list = ft_split(argv[1], ' ');
 		if (char_list == NULL)
-			return (clean_up(char_list, NULL));
+			return (NULL);
 		data = ft_splittoi(char_list);
 		clean_up(char_list, NULL);
 	}
 	else if (argc > 2)
 		data = ft_splittoi(++argv);
 	if (!data)
-		return (clean_up(NULL, data);
+		return (NULL);
 	if (!array_dup_check(data))
-		return (clean_up(NULL, data);
+		return (NULL);
 	stack_a = initial_data_load(data);
 	free(data);
 	if (stack_a == NULL)

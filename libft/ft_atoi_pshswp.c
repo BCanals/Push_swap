@@ -6,7 +6,7 @@
 /*   By: bcanals- <bcanals-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 15:18:02 by bcanals-          #+#    #+#             */
-/*   Updated: 2024/11/21 14:18:30 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/21 21:00:42 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,11 @@ int	*ft_atoi_pshswp(const char *str)
 	sign = 1;
 	load_i_sign(&i, &sign, str[i]);
 	rtrn = 0;
+	temp = 0;
 	while (str[i])
 	{
 		temp = rtrn * 10 + str[i++] - 48;
-		if (temp * sign < rtrn * sign)
+		if (temp < rtrn)
 			return (NULL);
 		rtrn = temp;
 	}
