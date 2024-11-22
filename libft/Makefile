@@ -6,7 +6,7 @@
 #    By: bizcru <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/28 15:47:58 by bizcru            #+#    #+#              #
-#    Updated: 2024/11/21 13:41:44 by bizcru           ###   ########.fr        #
+#    Updated: 2024/11/22 20:23:05 by bcanals-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRCS = ft_islower.c \
 		ft_lstadd_back.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
+		ft_lstlast_prev.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
@@ -90,7 +91,7 @@ CIAN = \033[36m
 all: $(NAME)
 
 $(NAME): $(OBJS) libft.h Makefile
-#@echo -n "$(PURPLE) -->building libft library..."
+	@echo -n "$(PURPLE) -->building libft library..."
 	@ar rc $@ $(OBJS)
 	@ranlib $@ 
 	@echo "$(GREEN) DONE! $(END)"
