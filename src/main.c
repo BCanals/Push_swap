@@ -6,14 +6,14 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/22 22:56:14 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/24 23:56:53 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <time.h>
 
-void	print_lst(int data)
+static void	print_lst(int data)
 {
 	ft_printf("%i\n", data);
 }
@@ -32,25 +32,20 @@ void	print_lst(int data)
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
+	t_node	*stack_b;
 
 	if (argc == 1)
 		return (0);
 	stack_a = data_loader(argc, argv);
 	if (!stack_a)
 		return (ft_putstr_fd("Error\n", 2));
-	t_node *stack_b;
-	stack_b = ft_calloc(sizeof(t_node), 1);
-	t_node *second_b;
-	second_b = ft_calloc(sizeof(t_node), 1);
-	stack_b->next = second_b;
-	stack_b->data = 1;
-	second_b->data = 2;
 	ft_printf("STACK A:\n----\n");
 	ft_lstiter(stack_a, print_lst);
 	ft_printf("STACK B:\n----\n");
-	ft_lstiter(stack_b, print_lst);
-	ft_printf("----\n----\n");
-	do_push(&stack_a, &stack_b, 'a');
+	//ft_lstiter(stack_b, print_lst);
+	//ft_printf("----\n----\n");
+	//aquí la funció per ordenar
+	stack_b = load_b(&stack_a);
 	ft_printf("----\n----\n");
 	ft_printf("STACK A:\n----\n");
 	ft_lstiter(stack_a, print_lst);
