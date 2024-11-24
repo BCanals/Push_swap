@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/22 20:49:25 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/11/22 22:56:14 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	ft_printf("STACK B:\n----\n");
 	ft_lstiter(stack_b, print_lst);
 	ft_printf("----\n----\n");
-	r_rotate_one(&stack_a, 'a');
+	do_push(&stack_a, &stack_b, 'a');
 	ft_printf("----\n----\n");
 	ft_printf("STACK A:\n----\n");
 	ft_lstiter(stack_a, print_lst);
