@@ -6,20 +6,22 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/22 20:32:23 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:28:46 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	do_r_rotate(t_node **stack)
+static void do_r_rotate(t_node **stack)
 {
-	t_node *not_last;
+	t_node *last;
 
-	not_last = ft_lstlast_prev(*stack);
-	not_last->next->next = *stack;
-	*stack = not_last->next;
-	not_last->next = NULL;
+	last = ft_lstlast(*stack);
+	last->next = *stack;
+	(*stack)->next = last;
+	*stack = last;
+	last->prev->next = NULL;
+	last->prev = NULL;
 }
 
 void	r_rotate_one (t_node **stack, char c)

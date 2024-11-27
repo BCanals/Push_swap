@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 04:17:34 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 19:17:08 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/27 17:25:07 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_node	*ft_lstmap(t_node *lst, int (*f)(int))
 		}
 		last->data = f(my_list->data);
 		last->next = NULL;
+		last->prev = my_list;
 		ft_lstadd_back(&rtrn, last);
 		my_list = my_list->next;
 	}

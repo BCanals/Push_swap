@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 21:27:31 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/22 20:44:30 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:44:20 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ static void	do_swap(t_node **stack)
 	if (!*stack || !((*stack)->next))
 		return ;
 	second = (*stack)->next;
+	second->prev = NULL;
 	(*stack)->next = second->next;
+	(*stack)->prev = second;
+	second->next->prev = *stack;
 	second->next = *stack;
 	*stack = second;
 }

@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 01:40:43 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/21 19:09:53 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/27 17:25:59 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ t_node	*ft_lstnew(int *data)
 		return (NULL);
 	rtrn->data = *data;
 	rtrn->next = NULL;
+	rtrn->prev = NULL;
 	return (rtrn);
 }
