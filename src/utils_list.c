@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:18:14 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/25 00:03:18 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/27 18:52:20 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,11 @@ t_node	*initial_data_load(int *data)
 t_node	*load_b(t_node **stack_a)
 {
 	t_node	*stack_b;
-	t_node	*temp;
 
-	temp = (*stack_a)->next->next;
-	stack_b = (*stack_a)->next;
-	stack_b->next = *stack_a;
-	(*stack_a)->next = NULL;
-	*stack_a = temp;
-	ft_printf("pb\npb\n");
+	stack_b = *stack_a;
+	*stack_a = (*stack_a)->next;
+	(*stack_a)->prev = NULL;
+	stack_b->next = NULL;
+	ft_printf("pb\n");
 	return (stack_b);
 }

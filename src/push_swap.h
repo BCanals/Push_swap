@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 23:40:54 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/24 23:53:14 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/27 17:00:40 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,4 @@ void	rotate_one(t_node **stack, char c);
 void	rotate_two(t_node **stack_a, t_node **stack_b);
 void	r_rotate_one(t_node **stack, char c);
 void	r_rotate_two(t_node **stack_a, t_node **stack_b);
+

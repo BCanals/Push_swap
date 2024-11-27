@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 23:37:11 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/22 19:32:04 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/11/27 17:29:19 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct s_node
 {
 	int				data;
 	struct s_node	*next;
+	struct s_node	*prev;
+	int				r_len;
+	int				rr_len;
 }					t_node;
 
 int		ft_islower(int c);
@@ -79,6 +82,7 @@ void	ft_lstadd_back(t_node **lst, t_node *new);
 void	ft_lstdelone(t_node *lst);
 void	ft_lstclear(t_node **lst);
 void	ft_lstiter(t_node *lst, void f(int));
+void	ft_lstiter_back(t_node *lst, void f(int));
 t_node	*ft_lstmap(t_node *lst, int (*f)(int));
 int		ft_printf(const char *format, ...);
 int		ft_printf_char(va_list *args);
