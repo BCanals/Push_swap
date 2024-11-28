@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:54:55 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/28 20:44:00 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/28 22:57:32 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ static void	full_sort_three(t_node **stack)
 	}
 }
 
+// Manages all the sorting steps :)
+
 void	sort_master(t_node **stack_a)
 {
 	t_node	*stack_b;
@@ -86,8 +88,12 @@ void	sort_master(t_node **stack_a)
 	if (is_sorted(*stack_a))
 		return ;
 	stack_b = load_b(stack_a);
-	//while (ft_lstsize(*stack_a) > 3)
-	//	sort_one(stack_a, &stack_b);
+	while (ft_lstsize(*stack_a) > 3)
+	{
+		update_r_lens(stack_a);
+		update_r_lens(&stack_b);
+		sort_one(stack_a, &stack_b);
+	}
 	sort_three(stack_a);
 	if (stack_b)
 		return_data(stack_a, &stack_b);

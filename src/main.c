@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/28 09:56:09 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/28 21:12:24 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	print_lst(int data)
 	clock_gettime(CLOCK_MONOTONIC, &end);
 	printf("duració: %f secs\n", elapsed);
 */
-
-
 
 int	main(int argc, char **argv)
 {

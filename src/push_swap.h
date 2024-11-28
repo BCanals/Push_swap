@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 23:40:54 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/28 20:38:04 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/28 21:04:51 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
-//to-do: afegir t_node->pos que representi la position dins del conjunt d'elements
+//to-do: afegir t_node->pos que representi la position dins del
+// conjunt d'elements
 // per tal de facilitar si ja hem trobat el següent element.
 
 t_node	*data_loader(int argc, char **argv);
