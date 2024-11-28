@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 21:27:31 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/28 19:04:31 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/28 21:09:29 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ static void	do_swap_easy(t_node **stack)
 	(*stack)->prev = NULL;
 	second->next = NULL;
 	second->prev = *stack;
-
 }
 
 static void	do_swap(t_node **stack)
