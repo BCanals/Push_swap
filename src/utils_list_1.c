@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_list.c                                       :+:      :+:    :+:   */
+/*   utils_list_1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:18:14 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/27 21:09:57 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/28 20:13:37 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_node	*load_b(t_node **stack_a)
 }
 
 /*
-   Returns 1 if the stack is sorted and 0 otherwise
+   Returns 1 if the stack is sorted and 0 otherwise.
 */
 
 int	is_sorted(t_node *stack)
@@ -75,4 +75,42 @@ int	is_sorted(t_node *stack)
 		stack = stack->next;
 	}
 	return (1);
+}
+
+/*
+	Return the node with the minimum data.
+*/
+
+t_node	*get_min(t_node *stack)
+{
+	t_node	*rtrn;
+
+	rtrn = stack;
+	stack = stack->next;
+	while (stack)
+	{
+		if (stack-> data < rtrn-> data)
+			rtrn = stack;
+		stack = stack->next;
+	}
+	return (rtrn);
+}
+
+/*
+   Return the node with the maximum data.
+*/
+
+t_node	*get_max(t_node *stack)
+{
+	t_node	*rtrn;
+
+	rtrn = stack;
+	stack = stack->next;
+	while (stack)
+	{
+		if (stack->data > rtrn->data)
+			rtrn = stack;
+		stack = stack->next;
+	}
+	return (rtrn);
 }

@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/28 09:41:38 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/28 17:54:35 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,21 @@ void	rotate_one (t_node **stack, char c)
 
 }
 
+void	rotate_one_m (t_node **stack, char c, int i)
+{
+	while (i-- > 0)
+		rotate_one(stack, c);
+}
+
 void	rotate_two (t_node **stack_a, t_node **stack_b)
 {
 	do_rotate(stack_a);
 	do_rotate(stack_b);
 	ft_printf("rr\n");
+}
+
+void	rotate_two_m (t_node **stack_a, t_node **stack_b, int i)
+{
+	while (i-- > 0)
+		rotate_two(stack_a, stack_b);
 }
