@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/27 18:40:09 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/28 09:41:38 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	do_rotate(t_node **stack)
 	last = ft_lstlast(*stack);
 	last->next = *stack;
 	(*stack)->prev = last;
+	last = *stack;
 	*stack = (*stack)->next;
 	last->next = NULL;
 }
@@ -30,6 +31,7 @@ void	rotate_one (t_node **stack, char c)
 	ft_printf("r%c\n", c);
 
 }
+
 void	rotate_two (t_node **stack_a, t_node **stack_b)
 {
 	do_rotate(stack_a);

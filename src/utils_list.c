@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:18:14 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/27 18:52:20 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/27 21:09:57 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ t_node	*initial_data_load(int *data)
 	return (stack_a);
 }
 
+/*
+	Does the first push to b, when there's no stack_b pointer yet,
+	and returns (for the first time) a stack_b pointer.
+*/
+
 t_node	*load_b(t_node **stack_a)
 {
 	t_node	*stack_b;
@@ -55,4 +60,19 @@ t_node	*load_b(t_node **stack_a)
 	stack_b->next = NULL;
 	ft_printf("pb\n");
 	return (stack_b);
+}
+
+/*
+   Returns 1 if the stack is sorted and 0 otherwise
+*/
+
+int	is_sorted(t_node *stack)
+{
+	while (stack->next)
+	{
+		if (stack->data > stack->next->data)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
