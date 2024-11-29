@@ -6,7 +6,7 @@
 #    By: bizcru <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/28 15:47:58 by bizcru            #+#    #+#              #
-#    Updated: 2024/11/27 17:41:31 by bizcru           ###   ########.fr        #
+#    Updated: 2024/11/29 21:37:25 by bizcru           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,9 +86,6 @@ BLUE = \033[34m
 PURPLE = \033[35m
 CIAN = \033[36m
 
-%.o: %.c
-	@gcc $(CFLAGS) -I. -c $< -o $@
-
 all: $(NAME)
 
 $(NAME): $(OBJS) libft.h Makefile
@@ -96,6 +93,9 @@ $(NAME): $(OBJS) libft.h Makefile
 	@ar rc $@ $(OBJS)
 	@ranlib $@ 
 	@echo "$(GREEN) DONE! $(END)"
+
+%.o: %.c
+	@gcc $(CFLAGS) -I. -c $< -o $@
 
 clean: 
 	@rm -f $(OBJS)
@@ -105,7 +105,4 @@ fclean: clean
 
 re: fclean all
 
-
-#@echo "\n $(PURPLE) building libft objects... $(END)"
-#@echo "\n $(GREEN) DONE! $(END)\n"
-
+.PHONY: all clean fclean re
