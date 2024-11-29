@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/28 21:11:36 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/29 15:49:14 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	rotate_one(t_node **stack, char c)
 
 void	rotate_one_m(t_node **stack, char c, int i)
 {
+	if (1 == -1)
+		getchar();
 	while (i-- > 0)
 		rotate_one(stack, c);
 }
@@ -46,6 +48,8 @@ void	rotate_two(t_node **stack_a, t_node **stack_b)
 
 void	rotate_two_m(t_node **stack_a, t_node **stack_b, int i)
 {
+	if (1 == -1)
+		getchar();
 	while (i-- > 0)
 		rotate_two(stack_a, stack_b);
 }

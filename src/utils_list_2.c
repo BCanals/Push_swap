@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 20:12:23 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/28 21:45:08 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/29 16:58:50 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,25 @@ void	update_r_lens(t_node *stack)
 	}
 }
 
+// Gets the place before which the target goes in the new stack
+// This should be on utils_sort_1.c but you know, norminette :)
+
+t_node	*get_pair(t_node *target, t_node *stack)
+{
+	t_node	*cand;
+	t_node	*temp;
+
+	temp = stack;
+	cand = stack;
+	temp = stack->next;
+	while (temp)
+	{
+		if ((cand->data < target->data && temp->data > cand->data) \
+			|| (temp->data < cand->data && temp->data > target->data))
+			cand = temp;
+		temp = temp->next;
+	}
+	if (cand->data < target->data)
+		return (get_min(stack));
+	return (cand);
+}

@@ -6,7 +6,7 @@
 /*   By: bcanals- <bcanals-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 13:22:44 by bcanals-          #+#    #+#             */
-/*   Updated: 2024/10/18 16:33:19 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/11/29 19:41:57 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 	i = 0;
 	retr = 0;
-	while (s1[i] != 0 && s2[i] != 0)
+	while (s1[i] != 0 || s2[i] != 0)
 	{
 		retr = (unsigned char)s1[i] - (unsigned char)s2[i];
 		if (retr != 0)
