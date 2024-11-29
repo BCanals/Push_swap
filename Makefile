@@ -6,19 +6,23 @@
 #    By: bizcru <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/18 17:30:42 by bizcru            #+#    #+#              #
-#    Updated: 2024/11/28 20:37:22 by bizcru           ###   ########.fr        #
+#    Updated: 2024/11/29 21:39:50 by bizcru           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+
 SRCS_NAMES = main.c utils_list_1.c utils_list_2.c utils_param.c utils_rotate.c \
 			 utils_r_rotate.c utils_swap.c utils_sort_1.c utils_sort_2.c
 SRCS = $(addprefix src/, $(SRCS_NAMES))
 OBJS = $(SRCS:.c=.o)
+
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
+
 INCLUDE = src/push_swap.h
 CFLAGS = -Wall -Wextra -Werror
+
 END = \033[m
 RED = \033[31m
 GREEN = \033[32m
@@ -60,4 +64,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all clean fclean $(LIBFT)
