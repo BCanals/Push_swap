@@ -6,21 +6,27 @@
 #    By: bizcru <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/18 17:30:42 by bizcru            #+#    #+#              #
-#    Updated: 2024/11/29 21:39:50 by bizcru           ###   ########.fr        #
+#    Updated: 2024/12/04 19:34:18 by bizcru           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BNS_NAME = checker
 
 SRCS_NAMES = main.c utils_list_1.c utils_list_2.c utils_param.c utils_rotate.c \
 			 utils_r_rotate.c utils_swap.c utils_sort_1.c utils_sort_2.c
 SRCS = $(addprefix src/, $(SRCS_NAMES))
 OBJS = $(SRCS:.c=.o)
+BNS_SRCS_NAMES = main_bonus.c utils_misc_bonus.c utils_param_bonus.c \
+				 utils_ops_bonus.c utils_sort_bonus.c
+BNS_SRCS = $(addprefix bonus/, $(BNS_SRCS_NAMES))
+BNS_OBJS = $(BNS_SRCS:.c=.o)
 
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 INCLUDE = src/push_swap.h
+BNS_INCLUDE = bonus/push_swap_bonus.h
 CFLAGS = -Wall -Wextra -Werror
 
 END = \033[m
@@ -40,6 +46,13 @@ $(NAME): $(OBJS) $(LIBFT)
 	@echo "$(GREEN) DONE!$(END)"
 	@echo "$(GREEN)   === BUILDING COMPLETE : ) ===$(END)\n"
 
+bonus: $(BNS_OBJS) $(LIBFT)
+	@echo -n "\n$(YELLOW) ---> BUILDING $(BNS_NAME)...$(END)"
+	@gcc $(CFLAGS) $(BNS_OBJS) -L$(LIBFT_DIR) -lft -o $(BNS_NAME)
+	@echo "$(GREEN) DONE!$(END)"
+	@echo "$(GREEN)   === BUILDING COMPLETE : ) ===$(END)\n"
+	
+
 $(LIBFT):
 	@echo "\n $(YELLOW) ---> Compiling libft... === $(END)"
 	@make -C $(LIBFT_DIR)
@@ -53,15 +66,15 @@ $(LIBFT):
 clean:
 	@echo -n "$(RED) --> Deleting object files... $(END)"
 	@make -C $(LIBFT_DIR) clean
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(BNS_OBJS)
 	@echo "$(GREEN) DONE! $(END)"
 
 fclean: clean
 	@echo -n "$(RED) --> Deleting executables... $(END)"
 	@make -C $(LIBFT_DIR) fclean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(BNS_NAME)
 	@echo "$(GREEN) DONE! $(END)"
 
 re: fclean all
 
-.PHONY: all clean fclean $(LIBFT)
+.PHONY: all clean fclean bonus re $(LIBFT)
