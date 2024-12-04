@@ -6,11 +6,11 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:18:14 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 16:47:03 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/04 19:20:28 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 /*
    Takes an array of integer where array[0] is the number of elements to copy.
@@ -44,8 +44,6 @@ t_node	*initial_data_load(int *data)
 	return (stack_a);
 }
 
-
-
 /*
    Returns 1 if the stack is sorted and 0 otherwise.
 */
@@ -61,5 +59,20 @@ int	is_sorted(t_node *stack)
 	return (1);
 }
 
-char	**get_orders()
-{}
+void	rotate_two(t_node **stack_a, t_node **stack_b)
+{
+	do_rotate(stack_a);
+	do_rotate(stack_b);
+}
+
+void	r_rotate_two(t_node **stack_a, t_node **stack_b)
+{
+	do_r_rotate(stack_a);
+	do_r_rotate(stack_b);
+}
+
+void	swap_two(t_node **stack_a, t_node **stack_b)
+{
+	do_swap(stack_a);
+	do_swap(stack_b);
+}
