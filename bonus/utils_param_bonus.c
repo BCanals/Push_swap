@@ -6,12 +6,11 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 15:14:11 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/04 18:19:45 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 /*
    function to be called to free memory and return NULL.
