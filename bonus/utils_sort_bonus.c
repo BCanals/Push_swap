@@ -6,11 +6,12 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:17:19 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 19:22:13 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/04 19:38:42 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "push_swap_bonus.h"
 
-static void do_sort(t_node stack_a, t_node stack_b, char *line)
+static void do_sort(t_node **stack_a, t_node **stack_b, char *line)
 {
 	if (ft_strcmp(line, "ra\n") == 0)
 		do_rotate(stack_a);
@@ -36,7 +37,7 @@ static void do_sort(t_node stack_a, t_node stack_b, char *line)
 		swap_two(stack_a, stack_b);
 }
 
-static int	check_line(char *ord)
+static int	check_line(char *line)
 {
 	if (!ft_strnstr("rrr\nrra\nrrb\nrr\nra\nrb\nss\nsa\nsb\npa\npb\n", line, 0))
 		return (1);
@@ -46,7 +47,6 @@ static int	check_line(char *ord)
 
 int	sort_serf(t_node **stack_a, t_node **stack_b)
 {
-	char	**rtrn;
 	char	*line;
 
 	while (1)
