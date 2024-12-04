@@ -6,19 +6,25 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 23:37:11 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/27 17:29:19 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/04 17:44:53 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
+# endif
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
 # include <stddef.h>
 # include <stdio.h>
+# include <fcntl.h>
 
 typedef struct s_node
 {
@@ -60,7 +66,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
@@ -90,5 +96,6 @@ int		ft_printf_dec(va_list *args);
 int		ft_printf_unsigned(va_list *args);
 int		ft_printf_hex(va_list *args, char type);
 int		ft_printf_ptr(va_list *args);
+char	*get_next_line(int fd);
 
 #endif
