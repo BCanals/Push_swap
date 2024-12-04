@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 12:51:11 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/04 14:40:39 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-// Just useful for debugging :) using ft_lstiter(stack_x, prting_lst);
-
-void	print_lst(int data)
-{
-	ft_printf("%i\n", data);
-}
+#include "push_swap_bonus.h"
 
 int	main(int argc, char **argv)
 {
-	t_node	*stack_a;
+	t_node	**stack_a;
+	char	**orders;
 
 	if (argc == 1)
 		return (0);
-	stack_a = data_loader(argc, argv);
-	if (!stack_a)
+	*stack_a = data_loader(argc, argv);
+	if (!*stack_a)
 		return (ft_putstr_fd("Error\n", 2));
-	sort_master(&stack_a);
-	ft_lstclear(&stack_a);
+	orders = get_orders();
+	if (!orders)
+		return (ft_putstr_cd("Error\n", 2));
+	sort_serf(stack_a, orders);
+	if (is_sorted(*stack_a))
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
+	ft_lstclear(stack_a);
 	return (0);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_list_1.c                                     :+:      :+:    :+:   */
+/*   utils_misc_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 17:18:14 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 17:43:32 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/04 16:47:03 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,7 @@ t_node	*initial_data_load(int *data)
 	return (stack_a);
 }
 
-/*
-	Does the first push to b, when there's no stack_b pointer yet,
-	and returns (for the first time) a stack_b pointer.
-*/
 
-t_node	*load_b(t_node **stack_a)
-{
-	t_node	*stack_b;
-
-	stack_b = *stack_a;
-	*stack_a = (*stack_a)->next;
-	(*stack_a)->prev = NULL;
-	stack_b->next = NULL;
-	ft_printf("pb\n");
-	return (stack_b);
-}
 
 /*
    Returns 1 if the stack is sorted and 0 otherwise.
@@ -76,40 +61,5 @@ int	is_sorted(t_node *stack)
 	return (1);
 }
 
-/*
-	Return the node with the minimum data.
-*/
-
-t_node	*get_min(t_node *stack)
-{
-	t_node	*rtrn;
-
-	rtrn = stack;
-	stack = stack->next;
-	while (stack)
-	{
-		if (stack-> data < rtrn-> data)
-			rtrn = stack;
-		stack = stack->next;
-	}
-	return (rtrn);
-}
-
-/*
-   Return the node with the maximum data.
-*/
-
-t_node	*get_max(t_node *stack)
-{
-	t_node	*rtrn;
-
-	rtrn = stack;
-	stack = stack->next;
-	while (stack)
-	{
-		if (stack->data > rtrn->data)
-			rtrn = stack;
-		stack = stack->next;
-	}
-	return (rtrn);
-}
+char	**get_orders()
+{}
