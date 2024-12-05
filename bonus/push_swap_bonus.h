@@ -6,12 +6,12 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 23:40:54 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 19:37:49 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/05 15:07:04 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 # include "../libft/libft.h"
 
 t_node	*data_loader(int argc, char **argv);
