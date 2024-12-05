@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 19:48:16 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/05 15:08:02 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static t_node	*load_b(t_node **stack_a)
 void	do_push(t_node **stack_to, t_node **stack_from)
 {
 	t_node	*second;
-	
+
 	if (!*stack_to)
 	{
 		*stack_to = load_b(stack_from);

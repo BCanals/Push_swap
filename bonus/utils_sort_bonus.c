@@ -6,12 +6,12 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:17:19 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 19:38:42 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/05 15:07:33 by bizcru           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap_bonus.h"
 
-static void do_sort(t_node **stack_a, t_node **stack_b, char *line)
+static void	do_sort(t_node **stack_a, t_node **stack_b, char *line)
 {
 	if (ft_strcmp(line, "ra\n") == 0)
 		do_rotate(stack_a);
