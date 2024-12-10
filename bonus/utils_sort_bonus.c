@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:17:19 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/05 15:07:33 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/10 16:40:21 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap_bonus.h"
@@ -39,7 +39,7 @@ static void	do_sort(t_node **stack_a, t_node **stack_b, char *line)
 
 static int	check_line(char *line)
 {
-	if (!ft_strnstr("rrr\nrra\nrrb\nrr\nra\nrb\nss\nsa\nsb\npa\npb\n", line, 0))
+	if (ft_strstr("rrr\nrra\nrrb\nrr\nra\nrb\nss\nsa\nsb\npa\npb\n", line))
 		return (1);
 	else
 		return (0);
