@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bcanals- <bcanals-@student.42barcel>       +#+  +:+       +#+        */
+/*   By: bcanals- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 13:22:44 by bcanals-          #+#    #+#             */
-/*   Updated: 2024/12/10 18:47:15 by bcanals-         ###   ########.fr       */
+/*   Created: 2024/12/10 14:42:25 by bcanals-          #+#    #+#             */
+/*   Updated: 2024/12/10 14:43:22 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	ft_free_array(char **s)
 {
-	int				retr;
 	unsigned int	i;
 
 	i = 0;
-	retr = 0;
-	while (s1[i] != 0 || s2[i] != 0)
-	{
-		retr = (unsigned char)s1[i] - (unsigned char)s2[i];
-		if (retr != 0)
-			return (retr);
-		i++;
-	}
-	return (retr);
+	while (s[i])
+		free(s[i++]);
+	free(s);
 }
+

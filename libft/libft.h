@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 23:37:11 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/10 18:15:49 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/12/10 18:51:10 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
-int		ft_strstr(const char *big, const char *little);
+char	*ft_strstr(const char *big, const char *little);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -98,5 +98,6 @@ int		ft_printf_unsigned(va_list *args);
 int		ft_printf_hex(va_list *args, char type);
 int		ft_printf_ptr(va_list *args);
 char	*get_next_line(int fd);
+void	ft_free_array(char **s);
 
 #endif
