@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:17:19 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/11 19:04:29 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:10:55 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap_bonus.h"
@@ -46,7 +46,7 @@ static int	check_line(char *line)
 	int		i;
 
 	i = 0;
-	l = ft_strdup("rrr\n rra\n rrb\n rr\n ra\n rb\n ss\n sa\n sb\n pa\n pb\n");
+	l = ft_strdup("rrr\n rra\n rrb\n rr\n ra\n rb\n ss\n sa\n sb\n pa\n pb\n\0");
 	if (!l)
 		return (0);
 	checks = ft_split(l, ' ');
@@ -72,6 +72,8 @@ int	sort_serf(t_node **stack_a, t_node **stack_b)
 	while (1)
 	{
 		line = get_next_line(0);
+		if(!line)
+			line = get_next_line(0);
 		if (!line)
 			return (1);
 		if (!check_line(line))
@@ -83,5 +85,6 @@ int	sort_serf(t_node **stack_a, t_node **stack_b)
 		}
 		do_sort(stack_a, stack_b, line);
 		free(line);
+		line = NULL;
 	}
 }
