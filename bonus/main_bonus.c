@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 19:44:58 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/11 16:07:15 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int	main(int argc, char **argv)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
-	if (stack_b)
-		ft_lstclear(&stack_b);
+	ft_lstclear(&stack_b);
 	ft_lstclear(&stack_a);
 	return (0);
 }

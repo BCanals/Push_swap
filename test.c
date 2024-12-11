@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include "libft/libft.h"
 
-/*
+
 int main()
 {
-	printf("rr\n");
+	printf("rb\n");
+	printf("rrb\n");
+	printf("pa\n");
 	}
-*/
+/*
 // el problema es que quan fa split fa free a la cadena escrita a ma i aixo dona problema
 int main (int argc, char **argv)
 {
@@ -35,4 +37,4 @@ int main (int argc, char **argv)
 	//		rtrn = 1;
 	printf("%i\n", rtrn);
 	//ft_free_array(check);
-}
+}*/

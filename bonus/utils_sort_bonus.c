@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:17:19 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/10 16:40:21 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/12/11 16:07:01 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap_bonus.h"
@@ -57,6 +57,8 @@ int	sort_serf(t_node **stack_a, t_node **stack_b)
 		if (!check_line(line))
 		{
 			free(line);
+			ft_lstclear(stack_a);
+			ft_lstclear(stack_b);
 			return (0);
 		}
 		do_sort(stack_a, stack_b, line);

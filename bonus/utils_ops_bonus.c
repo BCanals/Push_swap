@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/05 15:08:02 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/11 16:30:37 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	do_swap(t_node **stack)
 {
 	t_node	*second;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
 	if (!(*stack)->next->next)
 	{
 		second = *stack;
@@ -39,6 +41,8 @@ void	do_r_rotate(t_node **stack)
 {
 	t_node	*last;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
 	if (!(*stack)->next->next)
 		return (do_swap(stack));
 	last = ft_lstlast(*stack);
@@ -52,7 +56,9 @@ void	do_r_rotate(t_node **stack)
 void	do_rotate(t_node **stack)
 {
 	t_node	*last;
-
+	
+	if (!(*stack) || !(*stack)->next)
+		return ;
 	if (!(*stack)->next->next)
 		return (do_swap(stack));
 	(*stack)->next->prev = NULL;
@@ -90,6 +96,8 @@ void	do_push(t_node **stack_to, t_node **stack_from)
 		return ;
 	}
 	second = NULL;
+	if (!(*stack_from))
+		return ;
 	if ((*stack_from)->next)
 	{
 		second = (*stack_from)->next;
