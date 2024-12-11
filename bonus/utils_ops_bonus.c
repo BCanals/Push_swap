@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 22:35:57 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/11 16:30:37 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:11:41 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	do_r_rotate(t_node **stack)
 void	do_rotate(t_node **stack)
 {
 	t_node	*last;
-	
+
 	if (!(*stack) || !(*stack)->next)
 		return ;
 	if (!(*stack)->next->next)

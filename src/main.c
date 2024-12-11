@@ -6,18 +6,13 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/04 12:51:11 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/11 18:45:54 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Just useful for debugging :) using ft_lstiter(stack_x, prting_lst);
 
-void	print_lst(int data)
-{
-	ft_printf("%i\n", data);
-}
 
 int	main(int argc, char **argv)
 {

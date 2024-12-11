@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/11 13:08:27 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:35:54 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ static int	param_checker(char **prms)
 	j = 0;
 	while (prms[i])
 	{
-		if (prms[i][j] != '-' && prms[i][j] != '+' && !ft_isdigit(prms[i][j]))
+		if (prms[i][j] == '-' || prms[i][j] == '+')
+			j++;
+		if (!ft_isdigit(prms[i][j]))
 			return (0);
 		j++;
 		while (prms[i][j])

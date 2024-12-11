@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 19:17:19 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/11 16:07:01 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:04:29 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap_bonus.h"
@@ -37,12 +37,32 @@ static void	do_sort(t_node **stack_a, t_node **stack_b, char *line)
 		swap_two(stack_a, stack_b);
 }
 
+
+
 static int	check_line(char *line)
 {
-	if (ft_strstr("rrr\nrra\nrrb\nrr\nra\nrb\nss\nsa\nsb\npa\npb\n", line))
-		return (1);
-	else
+	char	**checks;
+	char	*l;
+	int		i;
+
+	i = 0;
+	l = ft_strdup("rrr\n rra\n rrb\n rr\n ra\n rb\n ss\n sa\n sb\n pa\n pb\n");
+	if (!l)
 		return (0);
+	checks = ft_split(l, ' ');
+	free(l);
+	if (!checks)
+		return (0);
+	while (checks[i])
+	{
+		if (ft_strcmp(checks[i++], line) == 0)
+		{
+			ft_free_array(checks);
+			return (1);
+		}
+	}
+	ft_free_array(checks);
+	return (0);
 }
 
 int	sort_serf(t_node **stack_a, t_node **stack_b)

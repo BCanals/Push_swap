@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/26 23:37:11 by bizcru            #+#    #+#             */
-/*   Updated: 2024/12/11 16:19:37 by bcanals-         ###   ########.fr       */
+/*   Updated: 2024/12/11 18:54:44 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int		ft_printf_dec(va_list *args);
 int		ft_printf_unsigned(va_list *args);
 int		ft_printf_hex(va_list *args, char type);
 int		ft_printf_ptr(va_list *args);
+void	ft_print_lst(int data);
+void	ft_print_array(char **array);
 char	*get_next_line(int fd);
 void	ft_free_array(char **s);
 
