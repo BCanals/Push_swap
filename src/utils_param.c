@@ -6,7 +6,7 @@
 /*   By: bizcru <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:50:33 by bizcru            #+#    #+#             */
-/*   Updated: 2024/11/29 20:08:57 by bizcru           ###   ########.fr       */
+/*   Updated: 2024/12/11 13:08:27 by bcanals-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ t_node	*data_loader(int argc, char **argv)
 	char	**char_list;
 	t_node	*stack_a;
 
+	data = NULL;
 	if (argc == 2)
 	{
 		char_list = ft_split(argv[1], ' ');
